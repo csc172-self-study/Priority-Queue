@@ -9,6 +9,7 @@
 #define MAXHEAP_H_
 
 #include "ArrayOperations.h"
+#include <stddef.h>
 
 template <typename E>
 class MaxHeap {
@@ -39,14 +40,14 @@ private:
 	}
 
 public:
-	MaxHeap(E* h, int num, int max) {
+	MaxHeap(E* h = nullptr, int num = NULL, int max = NULL) {
 		heap = h;
 		size = num;
 		maxSize = max;
 		buildHeap();
 	}
 
-	virtual ~MaxHeap();
+	~MaxHeap() {}
 
 	int getSize() {
 		return size;
