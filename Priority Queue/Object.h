@@ -8,12 +8,15 @@
 #ifndef OBJECT_H_
 #define OBJECT_H_
 
+#include <iostream>
+
 class Object {
 private:
 	int priority;
 	int ObjectID;
 public:
-	Object(int, int);
+	Object(int ID, int priority);
+	Object();
 
 	virtual ~Object();
 
@@ -21,7 +24,11 @@ public:
 	bool operator> (const Object) const;
 	bool operator== (const Object) const;
 
-	int getID();
+	int getID() const;
+	int getPriority() const;
+	void setPriority(int newPriority);
 };
+
+std::ostream & operator<< (std::ostream &out, const Object obj);
 
 #endif /* OBJECT_H_ */
