@@ -16,11 +16,12 @@ private:
 	MaxHeap<Object> objects;
 
 public:
+	PriorityQueue(Object objs[], int curSize, int maxSize);
+
+	int getSize();
 	void enqueue(Object obj);
 	int dequeue();
-	void changeWeight(Object obj);
+	void changeWeight(int ID, int newWeight);
 };
-
-
 
 #endif /* PRIORITYQUEUE_H_ */

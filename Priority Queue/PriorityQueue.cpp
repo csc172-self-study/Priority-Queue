@@ -7,6 +7,10 @@
 
 #include "PriorityQueue.h"
 
+PriorityQueue::PriorityQueue(Object objs[], int curSize, int maxSize) {
+	objects = MaxHeap<Object>(objs, curSize, maxSize);
+}
+
 void PriorityQueue::enqueue(Object obj) {
 	objects.insert(obj);
 }
@@ -16,8 +20,13 @@ int PriorityQueue::dequeue() {
 	return toRemove.getID();
 }
 
-void PriorityQueue::changeWeight(Object obj) {
+void PriorityQueue::changeWeight(int ID, int newWeight) {
+	Object obj(ID, newWeight);
 	int objPos = objects.find(obj);
 	objects.remove(objPos);
 	objects.insert(obj);
+}
+
+int PriorityQueue::getSize() {
+	return objects.getSize();
 }
