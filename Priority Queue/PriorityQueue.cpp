@@ -21,9 +21,12 @@ int PriorityQueue::dequeue() {
 }
 
 void PriorityQueue::changeWeight(int ID, int newWeight) {
+	// Create new object with same ID to replace old
 	Object obj(ID, newWeight);
+	// Find object to remove (objects match on ID) and remove it
 	int objPos = objects.find(obj);
 	objects.remove(objPos);
+	// Insert new object
 	objects.insert(obj);
 }
 

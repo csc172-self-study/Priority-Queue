@@ -16,12 +16,13 @@ private:
 	MaxHeap<Object> objects;
 
 public:
+	// Constructor passes everything to MaxHeap constructor
 	PriorityQueue(Object objs[], int curSize, int maxSize);
 
-	int getSize();
-	void enqueue(Object obj);
-	int dequeue();
-	void changeWeight(int ID, int newWeight);
+	int getSize(); // Get size of queue
+	void enqueue(Object obj); // Add object to queue
+	int dequeue(); // Remove object with highest priority
+	void changeWeight(int ID, int newWeight); // Change weight of existing object
 };
 
 #endif /* PRIORITYQUEUE_H_ */
